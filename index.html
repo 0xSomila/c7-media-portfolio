@@ -40,9 +40,10 @@
   .logo{font-family:var(--mono); font-weight:700; letter-spacing:0.02em; font-size:15px;}
   .navlinks{display:flex; gap:28px; font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:0.08em;}
   .navlinks a:hover{color:var(--red);}
-  @media (max-width:720px){ .navlinks{display:none;} }
+  .navlinks-cta{display:none;}
   .cta-btn{background:var(--ink); color:var(--cream); font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:0.08em; padding:10px 18px; border-radius:2px;}
   .cta-btn:hover{background:var(--red);}
+  @media (max-width:720px){ .nav-right .cta-btn{display:none;} }
 
   .label{font-family:var(--mono); font-size:13px; text-transform:uppercase; letter-spacing:0.12em; opacity:0.6;}
   .label.on-dark{color:rgba(245,237,216,0.7);}
@@ -71,14 +72,18 @@
   .dark .tag{border-color:rgba(245,237,216,0.3);}
 
   .offer-row{display:flex; justify-content:space-between; align-items:baseline; padding:18px 0; border-bottom:1px solid rgba(13,13,13,0.12); font-family:var(--serif); font-size:24px;}
-  .offer-row .price{font-family:var(--mono); font-size:15px; opacity:0.75;}
+  .offer-row .price{font-family:var(--mono); font-size:15px; opacity:0.75; white-space:nowrap;}
+  @media (max-width:560px){
+    .offer-row{flex-direction:column; align-items:flex-start; gap:6px; font-size:19px; padding:16px 0;}
+    .offer-row .price{font-size:13px;}
+  }
 
   .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:28px;}
   @media (max-width:860px){ .grid3{grid-template-columns:1fr 1fr;} }
   @media (max-width:560px){ .grid3{grid-template-columns:1fr;} }
 
   .two-col{display:flex; gap:56px;}
-  @media (max-width:860px){ .two-col{flex-direction:column; gap:28px;} }
+  @media (max-width:860px){ .two-col{flex-direction:column; gap:28px;} .two-col > *{align-self:stretch !important;} }
 
   /* ---- case study cards (link out to the real pages on catalyst7.co.za) ---- */
   .case-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px;}
@@ -96,8 +101,9 @@
   .case .case-cat{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.07em; opacity:0.55;}
   .case h3{font-family:var(--serif); font-weight:600; font-size:26px; margin:10px 0 14px 0;}
   .case p.body{flex:1;}
-  .case-stats{display:flex; gap:28px; margin:18px 0 6px 0;}
+  .case-stats{display:flex; gap:28px; margin:18px 0 6px 0; flex-wrap:wrap;}
   .case-stats .num{font-size:28px;}
+  @media (max-width:560px){ .case-body{padding:22px 22px 26px 22px;} }
   .visit{
     display:inline-flex; align-items:center; gap:8px; margin-top:20px;
     font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:0.06em;
@@ -167,8 +173,14 @@
       max-height:0; overflow:hidden; transition:max-height .35s ease;
       border-bottom:1px solid rgba(13,13,13,0.1); box-shadow:0 8px 24px rgba(13,13,13,0.08);
     }
-    .navlinks.open{ max-height:260px; padding:8px 24px; }
+    .navlinks.open{ max-height:340px; padding:8px 24px; }
     .navlinks a{ padding:14px 0; border-bottom:1px solid rgba(13,13,13,0.08); }
+    .navlinks-cta{
+      display:block; margin:14px 0 18px 0; text-align:center; border-bottom:none !important;
+      background:var(--ink); color:var(--cream); padding:12px 0; border-radius:2px;
+    }
+    .navlinks-cta:hover{ background:var(--red); color:var(--cream); }
+    .navlinks-cta::after{ display:none; }
     nav.menu-open .nav-toggle span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
     nav.menu-open .nav-toggle span:nth-child(2){ opacity:0; }
     nav.menu-open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
@@ -217,6 +229,7 @@
       <a href="#work">Work</a>
       <a href="#range">Range</a>
       <a href="#offers">Offers</a>
+      <a href="#contact" class="navlinks-cta">Start a Project</a>
     </div>
     <a href="#" class="nav-brand" aria-label="Catalyst 7 - Media — back to top">
       <span class="nav-logo-wrap">
