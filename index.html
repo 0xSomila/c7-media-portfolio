@@ -234,6 +234,15 @@
 
   .visit:hover{ gap:12px; opacity:1; color:var(--red); }
 </style>
+<style>
+.contact-actions{display:flex; flex-wrap:wrap; align-items:center; gap:14px 28px; margin-top:36px;}
+.contact-wa{background:var(--red); color:var(--cream); font-family:var(--mono); font-size:13px; text-transform:uppercase; letter-spacing:0.08em; padding:16px 24px; border-radius:2px; text-decoration:none; min-height:44px; display:inline-flex; align-items:center;}
+.contact-wa:hover{background:var(--cream); color:var(--ink);}
+.contact-link{color:var(--cream); font-family:var(--mono); font-size:13px; text-decoration:underline; text-underline-offset:4px; opacity:0.85; min-height:44px; display:inline-flex; align-items:center;}
+.contact-link:hover{opacity:1;}
+.contact-note{font-size:13px; opacity:0.6; margin-top:24px; max-width:620px; color:var(--cream); line-height:1.5;}
+@media (max-width:640px){ .contact-wa{width:100%; justify-content:center;} }
+</style>
 </head>
 <body>
 
@@ -513,14 +522,20 @@
       <div class="offer-row"><div class="name">Media Partner</div><div class="price">From R48,000/mo</div></div>
       <div class="offer-row"><div class="name">Signature Series</div><div class="price">From R75,500/season</div></div>
     </div>
-    <p class="body" style="opacity:0.55; font-size:15px; margin-top:28px;">Prices excl. VAT — Catalyst 7 is not VAT registered. Final pricing confirmed at scope.</p>
+    <p class="body" style="opacity:0.55; font-size:15px; margin-top:28px;">Catalyst 7 is not VAT registered, so no VAT is charged. Final pricing is confirmed at scope.</p>
   </div>
 </section>
 
 <footer id="contact" class="dark" style="padding:100px 0 60px 0;">
   <div class="wrap">
     <h2 class="display" style="color:var(--cream); max-width:700px;">Let's build something worth remembering.</h2>
-    <p class="body" style="opacity:0.85; margin-top:20px; max-width:600px;">Pretoria, Gauteng, South Africa.</p>
+    <p class="body" style="opacity:0.85; margin-top:20px; max-width:600px;">Tell us what you're making. WhatsApp is the fastest way to reach us.</p>
+    <div class="contact-actions">
+      <a class="contact-wa" href="https://wa.me/27645576603?text=Hi%20C7%20Media%2C%20I%27d%20like%20to%20start%20a%20project." target="_blank" rel="noopener">WhatsApp us: +27 64 557 6603</a>
+      <a class="contact-link" href="mailto:catalyst7@catalyst7.co.za">catalyst7@catalyst7.co.za</a>
+      <a class="contact-link" href="https://www.instagram.com/c7med.ia/" target="_blank" rel="noopener">Instagram @c7med.ia ↗</a>
+    </div>
+    <p class="contact-note">Pretoria, Gauteng, South Africa. When you contact us, we use your details only to reply about your project, and we delete them if you ask.</p>
     <div class="footer-row" style="margin-top:56px;">
       <span>Catalyst 7 Media</span>
       <span><a href="https://catalyst7.co.za" target="_blank" rel="noopener">catalyst7.co.za ↗</a></span>
